@@ -1,0 +1,164 @@
+<section>
+	<h1>Vamos a iniciar un nuevo proyecto juntos!</h1>
+
+	<main>
+		<form id="form">
+			<div>
+				<label for="e-name"
+					>Nombre de la empresa
+
+					<input type="text" id="e-name" />
+				</label>
+				<label for="name"
+					>Nombre del contacto
+					<input type="text" id="name" autocomplete="off" />
+				</label>
+				<label for="email"
+					>Correo electrónico
+					<input type="email" id="email" />
+				</label>
+			</div>
+
+			<div>
+				<h3>¿Que necesitas?</h3>
+				<div>
+					<input type="radio" name="need" id="web" />
+					<label for="web">Website</label>
+
+					<input type="radio" name="need" id="app" />
+					<label for="app">UI/UX Design</label>
+
+					<input type="radio" name="need" id="CMS" />
+					<label for="CMS">CMS</label>
+
+					<input type="radio" name="need" id="E-comm" />
+					<label for="E-comm">E-commerce</label>
+
+					<input type="radio" name="need" id="FrontEnd" />
+					<label for="FrontEnd"> FrontEnd</label>
+
+					<input type="radio" name="need" id="Aplicacion" />
+					<label for="Aplicacion">Aplicacion</label>
+				</div>
+
+				<h3>Presupuesto diponible</h3>
+				<div>
+					<input type="range" id="presupuesto" min="0" max="100000" />
+				</div>
+			</div>
+		</form>
+		<button type="submit" form="form">Enviar</button>
+	</main>
+</section>
+
+<style>
+	section {
+		padding: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	section > h1 {
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+	}
+
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
+	}
+
+	main form {
+		display: flex;
+		gap: 3rem;
+		flex-wrap: wrap;
+	}
+
+	main form > div {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		flex: 1 1 calc(50% - 4rem);
+	}
+
+	main form > div:first-of-type {
+		justify-content: space-between;
+
+		label {
+			font-size: large;
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		input {
+			padding: 0.5rem;
+			border-radius: 0.5rem;
+			background-color: transparent;
+			border: none;
+			border-bottom: 1px solid #ccc;
+			transition: all 0.3s;
+
+			&:focus {
+				outline: none;
+				border-bottom: 1px solid var(--color-primary);
+			}
+		}
+	}
+
+	main form > div:nth-of-type(2) > div {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 1rem;
+
+		label {
+			padding: 0.5rem 1rem;
+			border-radius: 0.5rem;
+			background-color: rgba(255, 255, 255, 0.25);
+			user-select: none;
+			text-align: center;
+		}
+	}
+
+	input[type="radio"] {
+		display: none;
+	}
+
+	input[type="checkbox"] + label {
+		cursor: pointer;
+	}
+
+	input[type="range"] {
+		-webkit-appearance: none;
+		width: 100%;
+		border-radius: 0.5rem;
+		background: #cccccc44;
+		outline: none;
+		transition: all 0.3s;
+	}
+
+	main form > div:nth-of-type(2) > div > input:checked + label {
+		background-color: var(--color-primary);
+		color: white;
+	}
+
+	main form > div:nth-of-type(2) > div > label main form div h3 {
+		font-size: 1.5rem;
+	}
+
+	main form > div:nth-of-type(2) > div > label {
+		font-size: 1.25rem;
+	}
+
+	button {
+		padding: 1rem 2rem;
+		border: none;
+		border-radius: 0.5rem;
+		background-color: var(--color-primary);
+		color: white;
+		cursor: pointer;
+		transition: all 0.3s;
+		align-self: flex-start;
+	}
+</style>

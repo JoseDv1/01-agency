@@ -1,0 +1,117 @@
+---
+import codeIcon from "@/assets/svgs/bx-code-alt.svg?raw";
+import codeBoxIcon from "@/assets/svgs/bx-code-block.svg?raw";
+---
+
+<section>
+	<h2>Que hacemos?</h2>
+	<main>
+		<article>
+			<div>
+				<Fragment set:html={codeIcon} />
+				<h3>Diseño de interfaces</h3>
+			</div>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+				sunt voluptatem harum dolorum obcaecati, commodi perspiciatis
+				accusantium molestias quisquam, nesciunt iste sed natus debitis
+				accusamus rerum itaque. Dolore, architecto quasi.
+			</p>
+		</article>
+		<article>
+			<div>
+				<Fragment set:html={codeBoxIcon} />
+				<h3>Desarrollo Front-End</h3>
+			</div>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+				repellendus esse aspernatur quo similique quam, nostrum facere
+				id blanditiis maiores cumque error qui exercitationem eaque?
+				Tempora eum doloremque cum quae.
+			</p>
+		</article>
+		<article>
+			<div>
+				<Fragment set:html={codeIcon} />
+				<h3>Desarrollo de Aplicaciones</h3>
+			</div>
+			<p>
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+				Recusandae harum nulla sed? Debitis, illum tempore cum itaque
+				alias vero porro fugit, dolor delectus libero nam natus minus
+				autem. Perferendis, ducimus?
+			</p>
+		</article>
+		<article>
+			<div>
+				<Fragment set:html={codeBoxIcon} />
+				<h3>Social Media</h3>
+			</div>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
+				quibusdam fuga mollitia fugiat assumenda, eaque voluptatum, amet
+				magnam rerum accusamus nulla distinctio libero commodi sit
+				similique ut quae sed hic!
+			</p>
+		</article>
+	</main>
+</section>
+
+<style>
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		padding: 2rem;
+	}
+
+	main {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	article {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+		flex-wrap: wrap;
+		padding: 1rem;
+		flex: 1 1 300px;
+
+		@media (width > 1200px) {
+			&:nth-child(odd) {
+				flex-direction: column-reverse;
+			}
+		}
+	}
+
+	article :global(svg) {
+		width: 5rem;
+		height: 5rem;
+		fill: var(--color-primary);
+	}
+
+	div {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		text-align: center;
+	}
+
+	h2 {
+		font-size: 3rem;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+	}
+
+	p {
+		text-align: center;
+	}
+</style>

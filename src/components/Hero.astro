@@ -1,0 +1,113 @@
+---
+import CircleSVG from "@/assets/svgs/circle.svg?raw";
+import PlusSVG from "@/assets/svgs/plus.svg?raw";
+import SquareDotsSVG from "@/assets/svgs/square-dots.svg?raw";
+import TriangleSVG from "@/assets/svgs/triangle.svg?raw";
+---
+
+<main>
+	<img src="cowork.jpg" alt="Cowork" />
+
+	<section>
+		<h1>Vivimos los <br />detalles</h1>
+		<p>
+			Nuestra mision es crear aplicaciones con las tecnologias mas
+			modernas que puedan atravesar varias generaciones facilmente
+		</p>
+		<button>Solicitar presupuesto</button>
+	</section>
+
+	<span set:html={CircleSVG} />
+	<span set:html={PlusSVG} />
+	<span set:html={SquareDotsSVG} />
+	<span set:html={TriangleSVG} />
+</main>
+
+<style>
+	main {
+		width: 100%;
+		height: 80vh;
+		margin-bottom: 2rem;
+	}
+
+	img:first-child {
+		filter: brightness(0.2) grayscale(0.5);
+		display: block;
+		position: absolute;
+		z-index: -1;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+
+	span {
+		position: absolute;
+		width: 7.5rem;
+		aspect-ratio: 1;
+		z-index: 1;
+		opacity: 0.6;
+
+		&:nth-of-type(1) {
+			top: 70%;
+			left: 50%;
+		}
+
+		&:nth-of-type(2) {
+			top: 40%;
+			right: 20%;
+		}
+
+		&:nth-of-type(3) {
+			bottom: 0;
+			right: 5%;
+		}
+
+		&:nth-of-type(4) {
+			top: -5%;
+			right: 10%;
+		}
+
+		@media (width < 768px) {
+			display: none;
+		}
+	}
+
+	section {
+		top: 20%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 2rem;
+		width: max(700px, 40%);
+		z-index: 2;
+		padding-inline: 2rem;
+	}
+
+	section h1 {
+		font-size: 3.5rem;
+		text-wrap: pretty;
+		background: linear-gradient(
+			90deg,
+			var(--color-secondary),
+			var(--color-primary) 25%,
+			var(--color-tertiary) 50%
+		);
+		-webkit-background-clip: text;
+		color: transparent;
+	}
+
+	button {
+		background-color: var(--color-primary);
+		color: var(--white);
+		padding: 1rem 1.5rem;
+		border: none;
+		border-radius: 20px;
+		cursor: pointer;
+		transition: background-color 0.3s;
+
+		&:hover {
+			background-color: var(--color-secondary);
+		}
+	}
+</style>

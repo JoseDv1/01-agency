@@ -1,0 +1,113 @@
+---
+import githubIcon from "@/assets/svgs/bxl-github.svg?raw";
+import webIcon from "@/assets/svgs/bx-world.svg?raw";
+---
+
+<footer>
+	<main>
+		<article>
+			<h2>Siganos en nuestro trabajo</h2>
+			<div>
+				<a href="https://github.com/JoseDv1">
+					<Fragment set:html={githubIcon} />
+				</a>
+				<a href="https://josedv.com">
+					<Fragment set:html={webIcon} />
+				</a>
+			</div>
+		</article>
+
+		<article>
+			<h2>Entre en contacto</h2>
+			<div>
+				<a href="mailto:jose@josedv.com">jose@josedv.com</a>
+				<a href="tel:573103652785">+57 3103652785</a>
+			</div>
+		</article>
+
+		<article>
+			<ul>
+				<li><a href="#">Quienes Somos</a></li>
+				<li><a href="#">Servicios</a></li>
+				<li><a href="#">Testamentos</a></li>
+				<li><a href="#">Presuspuesto</a></li>
+			</ul>
+		</article>
+	</main>
+	<hr />
+	<footer>
+		<p>Copyright {new Date().getFullYear()}</p>
+
+		<a href="#">Politica de privacidad</a>
+		<a href="#">Terminos y condiciones</a>
+	</footer>
+</footer>
+
+<style>
+	footer {
+		display: flex;
+		flex-direction: column;
+		padding: 2rem;
+	}
+
+	footer > footer {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-flow: row wrap;
+		gap: 2rem;
+	}
+
+	main {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: first baseline;
+		justify-content: space-between;
+		gap: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	a {
+		color: white;
+		text-decoration: none;
+
+		&:hover {
+			color: var(--color-primary);
+		}
+	}
+
+	article {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	article div {
+		display: flex;
+		gap: 1rem;
+	}
+
+	article:nth-of-type(2) div {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	article:nth-of-type(3) {
+		align-self: center;
+	}
+
+	article ul {
+		list-style: none;
+		display: flex;
+		gap: 1rem;
+	}
+
+	footer :global(svg) {
+		width: 2.5rem;
+		height: 2.5rem;
+
+		&:hover {
+			fill: var(--color-primary);
+		}
+	}
+</style>

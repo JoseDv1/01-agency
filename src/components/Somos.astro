@@ -1,0 +1,114 @@
+---
+import Airbnb from "@/assets/svgs/airbnb.svg?raw";
+import CocaCola from "@/assets/svgs/Coca-Cola_logo.svg?raw";
+import Puma from "@/assets/svgs/puma-logo.svg?raw";
+import Nike from "@/assets/svgs/nike.svg?raw";
+import Uber from "@/assets/svgs/Uber-Logo.svg?raw";
+import FreeCodeCamp from "@/assets/svgs/free-code-camp-logo.svg?raw";
+---
+
+<section>
+	<article>
+		<h2>¿Quienes Somos?</h2>
+		<p>
+			<b>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+				magni ratione possimus error, quis vitae amet repellendus natus
+				provident
+			</b>
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+			asperiores nemo amet cupiditate dolorem sint! Eveniet eos
+			consequuntur quo, ullam rem exercitationem nobis, accusamus iste
+			praesentium quod vel perspiciatis ea eaque incidunt soluta
+			doloremque, fugit voluptate rerum totam unde quos!
+		</p>
+	</article>
+
+	<article>
+		<h3>Empresas que confian en nosotros</h3>
+		<ul>
+			<li>
+				<Fragment set:html={FreeCodeCamp} />
+			</li>
+			<li>
+				<Fragment set:html={Nike} />
+			</li>
+			<li>
+				<Fragment set:html={Uber} />
+			</li>
+			<li>
+				<Fragment set:html={Puma} />
+			</li>
+			<li>
+				<Fragment set:html={CocaCola} />
+			</li>
+			<li>
+				<Fragment set:html={Airbnb} />
+			</li>
+		</ul>
+	</article>
+</section>
+
+<style>
+	section {
+		display: flex;
+		gap: 2rem;
+		padding: 2rem;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-bottom: 2rem;
+	}
+
+	article {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+
+		&:first-of-type {
+			flex: 1 1 40%;
+		}
+	}
+
+	article h2 {
+		font-size: 2.5rem;
+	}
+
+	article h3 {
+		font-size: 1.5rem;
+	}
+
+	ul li :global(svg) {
+		fill: white;
+		width: 100px;
+		height: 100px;
+	}
+
+	ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		list-style: none;
+		place-content: center;
+	}
+
+	li {
+		border-color: white;
+		border-style: solid;
+		border-width: 0 1px 1px 0;
+		padding: 0 1rem;
+
+		&:nth-of-type(3) {
+			border-width: 0 0 1px 0;
+		}
+
+		&:nth-of-type(n + 4) {
+			border-width: 0 1px 0 0;
+		}
+
+		&:nth-of-type(6) {
+			border-width: 1px 0 0 0;
+		}
+	}
+</style>
